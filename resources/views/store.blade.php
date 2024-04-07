@@ -6,46 +6,21 @@
 
 <section>
     <h2>Music</h2>
+    @foreach ($musics as $music)
     <div>
         <div>
-            <strong>OK Computer</strong>
+            <strong>{{$music->album_title}}</strong>
         </div>
-        <img src="{{ asset('Images/album-covers/OK Computer.jpg') }}" height="300">
+        <img src="{{ asset($music->album_image) }}" height="300">
         <div>
-            <span>$10</span>
+            <span>{{$music->album_price}}</span>
             <button role="button">Add to Cart</button>
         </div>
     </div>
-    <div>
-        <div>
-            <strong>In Rainbows</strong>
-        </div>
-        <img src="{{ asset('Images/album-covers/In Rainbows.jpg') }}" height="300">
-        <div>
-            <span>$10</span>
-            <button role="button">Add to Cart</button>
-        </div>
-    </div>
-    <div>
-        <div>
-            <strong>The Bends</strong>
-        </div>
-        <img src="{{ asset('Images/album-covers/The Bends.jpg') }}" height="300">
-        <div>
-            <span>$10</span>
-            <button role="button">Add to Cart</button>
-        </div>
-    </div>
-    <div>
-        <div>
-            <strong>Pablo Honey</strong>
-        </div>
-        <img src="{{ asset('Images/album-covers/Pablo Honey.jpg') }}" height="300">
-        <div>
-            <span>$10</span>
-            <button role="button">Add to Cart</button>
-        </div>
-    </div>   
+        
+    @endforeach
+    
+    
 </section>
 
 <section>

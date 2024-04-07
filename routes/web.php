@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TourController;
+use App\Http\Controllers\MusicstoreController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,4 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/store', function () {
-    return view('store');
-});
+Route::get('/store', [MusicstoreController::class, 'index']);
