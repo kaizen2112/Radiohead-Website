@@ -25,47 +25,70 @@
 
 <section>
     <h2>Merch</h2>
-    <div>
-        <div>
-            <strong>T-Shirt</strong>
-        </div>
-        <img src="{{ asset('Images/merchs/Tshirt.jpg')}}" height="250">
-        <div>
-            <span>$8</span>
-            <button role="button">Add to Cart</button>
-        </div>
+
+    {{-- T-Shirts --}}
+    <div class="merch-type">
+        <h3>T-Shirts</h3>
+        @foreach ($merches as $merch)
+            @if ($merch->type === 'T-Shirt')
+                <div class="merch-item">
+                    <strong>{{$merch->name}}</strong>
+                    <span>{{$merch->size}}</span><br>
+                    <span>{{$merch->price}}</span>
+                    <button role="button">Add to Cart</button>
+                </div>
+            @endif
+        @endforeach
     </div>
-    <div>
-        <div>
-            <strong>Mug</strong>
-        </div>
-        <img src="{{ asset('Images/merchs/Mug.jpg')}}" height="250">
-        <div>
-            <span>$8</span>
-            <button role="button">Add to Cart</button>
-        </div>
+
+    {{-- Hoodies --}}
+    <div class="merch-type">
+        <h3>Hoodies</h3>
+        @foreach ($merches as $merch)
+            @if ($merch->type === 'Hoodie')
+                <div class="merch-item">
+                    <strong>{{$merch->name}}</strong>
+                    <span>{{$merch->size}}</span><br>
+                    <span>{{$merch->price}}</span>
+                    <button role="button">Add to Cart</button>
+                </div>
+            @endif
+        @endforeach
     </div>
-    <div>
-        <div>
-            <strong>Hoodie</strong>
-        </div>
-        <img src="{{ asset('Images/merchs/Hoodie.jpg')}}" height="250">
-        <div>
-            <span>$10</span>
-            <button role="button">Add to Cart</button>
-        </div>
+
+    {{-- Mugs --}}
+    <div class="merch-type">
+        <h3>Mugs</h3>
+        @foreach ($merches as $merch)
+            @if ($merch->type === 'Mug')
+                <div class="merch-item">
+                    <strong>{{$merch->name}}</strong>
+                    <span>{{$merch->size}}</span><br>
+                    <span>{{$merch->price}}</span>
+                    <button role="button">Add to Cart</button>
+                </div>
+            @endif
+        @endforeach
     </div>
-    <div>
-        <div>
-            <strong>Cap</strong>
-        </div>
-        <img src="{{ asset('Images/merchs/Cap.jpg')}}" height="250">
-        <div>
-            <span>$7</span>
-            <button role="button">Add to Cart</button>
-        </div>
+
+    {{-- Hats --}}
+    <div class="merch-type">
+        <h3>Hats</h3>
+        @foreach ($merches as $merch)
+            @if ($merch->type === 'Hat')
+                <div class="merch-item">
+                    <strong>{{$merch->name}}</strong>
+                    <span>{{$merch->size}}</span><br>
+                    <span>{{$merch->price}}</span>
+                    <button role="button">Add to Cart</button>
+                </div>
+            @endif
+        @endforeach
     </div>
+
 </section>
+
+
 <section>
     <h2>Cart</h2>
     <div>

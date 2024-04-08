@@ -1,10 +1,10 @@
 <link rel="stylesheet" href="{{ asset('css/styles.css') }}" />
 
 @include('partials.hero')
+<br>
 
-<hr>
-
-<button type="button">Get Our Latest Album</button>
+<button> Get Our Latest Albums
+</button>
 <br>
 <br>
 <!-- Insert a background picture here -->
@@ -15,9 +15,8 @@
         <h2>Upcoming Tours</h2>
 
 
-        <div>
+        <div class="tour-item">
             @foreach($tours as $tour)
-           
 
             <div>
                 <strong>{{$tour->tour_date}}</strong>
@@ -31,8 +30,6 @@
             </div>
         
         @endforeach
-            
-
         </div>
     </section>
     
