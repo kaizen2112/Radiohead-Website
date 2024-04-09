@@ -1,0 +1,85 @@
+.album-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust this value to add space between cards */
+}
+
+.album-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px; /* Adjust the width of each card as needed */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.album-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.album-card div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.album-card button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.album-card button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+.merch-type {
+    margin-bottom: 30px; /* Adjust margin between different merch types */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /
+}
+
+.merch-type h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.merch-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.merch-item strong {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.merch-item span {
+    font-size: 16px;
+}
+
+.merch-item button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.merch-item button:hover {
+    background-color: #0056b3;
+}

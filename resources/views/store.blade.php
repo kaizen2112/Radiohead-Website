@@ -1,39 +1,53 @@
+<link rel="stylesheet" href="{{ asset('css/cardview.css') }}" />
 <link rel="stylesheet" href="{{ asset('css/styles.css') }}" />
 <link rel="stylesheet" href="{{ asset('css/store.css') }}" />
 
 
 @include('partials.hero')
 
-<section>
-    <h2>Music</h2>
-    @foreach ($musics as $music)
-    <div>
-        <div>
-            <strong>{{$music->album_title}}</strong>
-        </div>
-        <img src="{{ asset($music->album_image) }}" height="300">
-        <div>
-            <span>{{$music->album_price}}</span>
-            <button role="button">Add to Cart</button>
-        </div>
-    </div>
+<section class="album-section">
+
+    <h2 class="music-header">Music</h2>
+    <div class="album-container">
+        @foreach ($musics as $music)
+        <a href="/store/albums/{{$music->id}}">
+    <div class="album-card">
+        
+            <div>
+                <strong>{{$music->album_title}}</strong>
+            </div>
+            <img src="{{ asset($music->album_image) }}" height="300">
+            <div>
+                <span>{{$music->album_price}}</span>
+                <button role="button">Add to Cart</button>
+            </div>
+
+        
+        
+    </div></a>
         
     @endforeach
+    
+
+    </div>
     
     
 </section>
 
-<section>
-    <h2>Merch</h2>
+<section class="merch-section">
+    <h2 class="merch-header">Merch</h2>
 
     {{-- T-Shirts --}}
-    <div class="merch-type">
-        <h3>T-Shirts</h3>
+    <h3>T-Shirts</h3>
+    <div class="merch-type"> 
+        
         @foreach ($merches as $merch)
             @if ($merch->type === 'T-Shirt')
                 <div class="merch-item">
                     <strong>{{$merch->name}}</strong>
                     <span>{{$merch->size}}</span><br>
+                    <img src="Images/merchs/Tshirt.jpg" height="300">
+
                     <span>{{$merch->price}}</span>
                     <button role="button">Add to Cart</button>
                 </div>
@@ -42,13 +56,15 @@
     </div>
 
     {{-- Hoodies --}}
+    <h3>Hoodies</h3>
     <div class="merch-type">
-        <h3>Hoodies</h3>
         @foreach ($merches as $merch)
             @if ($merch->type === 'Hoodie')
                 <div class="merch-item">
                     <strong>{{$merch->name}}</strong>
                     <span>{{$merch->size}}</span><br>
+                    <img src="Images/merchs/Hoodie.jpg" height="300">
+
                     <span>{{$merch->price}}</span>
                     <button role="button">Add to Cart</button>
                 </div>
@@ -57,13 +73,15 @@
     </div>
 
     {{-- Mugs --}}
+    <h3>Mugs</h3>
     <div class="merch-type">
-        <h3>Mugs</h3>
         @foreach ($merches as $merch)
             @if ($merch->type === 'Mug')
                 <div class="merch-item">
                     <strong>{{$merch->name}}</strong>
                     <span>{{$merch->size}}</span><br>
+                    <img src="Images/merchs/Mug.jpg" height="300">
+
                     <span>{{$merch->price}}</span>
                     <button role="button">Add to Cart</button>
                 </div>
@@ -72,14 +90,16 @@
     </div>
 
     {{-- Hats --}}
+    <h3>Hats</h3>
     <div class="merch-type">
-        <h3>Hats</h3>
         @foreach ($merches as $merch)
             @if ($merch->type === 'Hat')
                 <div class="merch-item">
                     <strong>{{$merch->name}}</strong>
                     <span>{{$merch->size}}</span><br>
-                    <span>{{$merch->price}}</span>
+                    <img src="Images/merchs/Cap.jpg" height="300">
+
+                    <span>${{$merch->price}}</span>
                     <button role="button">Add to Cart</button>
                 </div>
             @endif

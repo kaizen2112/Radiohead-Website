@@ -28,3 +28,9 @@ Route::get('/about', function () {
 
 Route::get('/store', [MerchController::class, 'index']);
 
+Route::get('/store/albums/{album}', [MerchController::class, 'showalbum']);
+
+// Route::get('/store/albums/{merchs}', [MerchController::class, 'show']);
+
+
+

@@ -18,7 +18,7 @@
         <div class="tour-item">
             @foreach($tours as $tour)
 
-            <div>
+            <span>
                 <strong>{{$tour->tour_date}}</strong>
                 &lt;&gt;
                 <span>{{$tour->location}}</span>
@@ -27,7 +27,7 @@
                 &lt;&gt;
                 <button type="button">Buy Tickets</button>
                 <hr>
-            </div>
+            </span>
         
         @endforeach
         </div>

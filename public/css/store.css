@@ -1,0 +1,16 @@
+.album-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50%;
+    margin-left: 10%;
+}
+.merch-section {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px; /* Adjust margin as needed */
+    margin-left: 10%;
+}
+.music-header, .merch-header{
+    font-size: 2.5em;
+    /* margin-left: 10%; */
+}

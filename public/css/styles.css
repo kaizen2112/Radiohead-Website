@@ -2,13 +2,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
 *{
-    box-sizing: border-box; 
+    /* box-sizing: border-box;  */
     font-family: Raleway;
     color: #0F0F0F; 
 }
 html, body{
     margin: 0;
     padding: 0;
+}
+a{
+    color: #0F0F0F;
+    text-decoration: none;
+
 }
 
 button {
@@ -136,6 +141,15 @@ button {
     margin: 15px;
     
 }
+.tour-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0 1.5em;
+    align-items: center;
+}
 
 
 
@@ -144,6 +158,12 @@ button {
     padding: 10px; /* Add some padding for spacing */
     margin-bottom: 10px; /* Add margin to separate each item */
     border-radius: 5px; /* Optional: Add rounded corners */
+
+    
+    /* justify-content: space-between; */
+
+    align-items: center;
+
     
 }
 
@@ -153,7 +173,8 @@ button {
 }
 
 .tour-item span {
-    display: block; /* Make spans block-level for better formatting */
+    /* display: block; Make spans block-level for better formatting */
+    /* displaye: block; */
     color: #666; /* Color for location and theatre */
 }
 
