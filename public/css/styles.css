@@ -5,6 +5,7 @@
     /* box-sizing: border-box;  */
     font-family: Raleway;
     color: #0F0F0F; 
+    /* background-color: #0F0F0F; */
 }
 html, body{
     margin: 0;
@@ -15,6 +16,25 @@ a{
     text-decoration: none;
 
 }
+
+#productButtons button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #f0f0f0;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+#productButtons button.active {
+    background-color: #007BFF;
+    color: white;
+}
+
+#products .product {
+    display: none; /* Initially hide all products */
+}
+
 
 button {
     font-size: 18px;

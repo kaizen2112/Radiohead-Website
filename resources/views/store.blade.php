@@ -36,75 +36,89 @@
 
 <section class="merch-section">
     <h2 class="merch-header">Merch</h2>
+    <div id="productButtons">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="t-shirt">T-shirt</button>
+        <button class="filter-btn" data-filter="hoodie">Hoodie</button>
+        <button class="filter-btn" data-filter="mug">Mugs</button>
+        <button class="filter-btn" data-filter="hat">Hats</button>
+        <button class="filter-btn" data-filter="poster">Posters</button>
 
-    {{-- T-Shirts --}}
+    </div>
+
+    <div id="products">
+        <!-- Your products go here, each with a class indicating its category -->
+        {{-- T-Shirts --}}
     <h3>T-Shirts</h3>
     <div class="merch-type"> 
         
         @foreach ($merches as $merch)
-            @if ($merch->type === 'T-Shirt')
-                <div class="merch-item">
-                    <strong>{{$merch->name}}</strong>
-                    <span>{{$merch->size}}</span><br>
-                    <img src="Images/merchs/Tshirt.jpg" height="300">
-
-                    <span>{{$merch->price}}</span>
-                    <button role="button">Add to Cart</button>
-                </div>
-            @endif
+        <div class="merch-item {{ strtolower($merch->type) }}"> <!-- Add dynamic class based on type -->
+            <strong>{{$merch->name}}</strong>
+            <span>{{$merch->size}}</span><br>
+            <img src="{{ asset('Images/merchs/'.strtolower($merch->type).'.jpg') }}" height="300">
+            <span>{{$merch->price}}</span>
+            <button role="button">Add to Cart</button>
+        </div>
         @endforeach
+
     </div>
 
-    {{-- Hoodies --}}
-    <h3>Hoodies</h3>
-    <div class="merch-type">
-        @foreach ($merches as $merch)
-            @if ($merch->type === 'Hoodie')
-                <div class="merch-item">
-                    <strong>{{$merch->name}}</strong>
-                    <span>{{$merch->size}}</span><br>
-                    <img src="Images/merchs/Hoodie.jpg" height="300">
-
-                    <span>{{$merch->price}}</span>
-                    <button role="button">Add to Cart</button>
-                </div>
-            @endif
-        @endforeach
     </div>
 
-    {{-- Mugs --}}
-    <h3>Mugs</h3>
-    <div class="merch-type">
-        @foreach ($merches as $merch)
-            @if ($merch->type === 'Mug')
-                <div class="merch-item">
-                    <strong>{{$merch->name}}</strong>
-                    <span>{{$merch->size}}</span><br>
-                    <img src="Images/merchs/Mug.jpg" height="300">
+    {{-- <script src="/js/filter.js"></script> --}}
+    <script>
+        document.querySelectorAll('.filter-btn').forEach(button => {
+    button.addEventListener('click', function() {
+        let current = document.getElementsByClassName('active');
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+        
+        const filter = this.getAttribute('data-filter');
+        let products = document.querySelectorAll('#products .product');
 
-                    <span>{{$merch->price}}</span>
-                    <button role="button">Add to Cart</button>
-                </div>
-            @endif
-        @endforeach
-    </div>
+        products.forEach(product => {
+            if (filter === 'all' || product.classList.contains(filter)) {
+                product.style.display = 'block';
+            } else {
+                product.style.display = 'none';
+            }
+        });
+    });
+});
 
-    {{-- Hats --}}
-    <h3>Hats</h3>
-    <div class="merch-type">
-        @foreach ($merches as $merch)
-            @if ($merch->type === 'Hat')
-                <div class="merch-item">
-                    <strong>{{$merch->name}}</strong>
-                    <span>{{$merch->size}}</span><br>
-                    <img src="Images/merchs/Cap.jpg" height="300">
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.filter-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from currently active button
+            let current = document.querySelector('.filter-btn.active');
+            if (current) {
+                current.classList.remove('active');
+            }
+            this.classList.add('active');
 
-                    <span>${{$merch->price}}</span>
-                    <button role="button">Add to Cart</button>
-                </div>
-            @endif
-        @endforeach
-    </div>
+            // Get the filter type from the clicked button
+            const filter = this.getAttribute('data-filter');
+
+            // Get all merch items
+            let products = document.querySelectorAll('.merch-item');
+
+            // Display or hide merch items based on filter
+            products.forEach(product => {
+                if (filter === 'all' || product.classList.contains(filter)) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        });
+    });
+});
+
+    </script>
+
+    
+   
 
 </section>
 

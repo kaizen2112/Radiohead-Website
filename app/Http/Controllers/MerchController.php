@@ -14,6 +14,8 @@ class MerchController extends Controller
         $merches = Merch::latest()->get(); // Call ->get() to execute the query
         $musics = Musicstore::latest()->get(); // Assuming Music is your model for music data
 
+        // dd($request);
+
 
         // return view('store', [['merches' => $merches], ['musics' => $musics]]);
         return view('store', compact('merches', 'musics'));

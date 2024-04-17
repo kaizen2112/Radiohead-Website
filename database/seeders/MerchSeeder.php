@@ -181,25 +181,8 @@ class MerchSeeder extends Seeder
                 'description' => 'The Weeknd Heartless Poster',
                 'release_date' => '2021-03-20'
             ],
-            [
-                'type' => 'Vinyl',
-                'name' => 'The Weeknd After Hours Vinyl',
-                'price' => 35.00,
-                'stock' => 100,
-                'availability' => true,
-                // 'image' => 'https://cdn.shopify.com/s/files/1/0012/4957/4961/products/After_Hours_Vinyl_1_1024x1024.jpg?v=1583780134',
-                'description' => 'The Weeknd After Hours Vinyl',
-                'release_date' => '2021-03-20'
-
-            ],
-            [
-                'type' => 'Vinyl',
-                'name' => 'The Weeknd Starboy Vinyl',
-                'price' => 35.00,
-                'stock' => 100,
-                'availability' => true,
-                // 'image' => 'https://cdn.shopify.com/s/files/1/0012/4957/4961/products/Starboy_Vinyl_1_102,
-            ],
+            
+            
             [
                 'type' => 'Hoodie',
                 'name' => 'The Weeknd After Hours Hoodie',
