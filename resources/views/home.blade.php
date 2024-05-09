@@ -11,29 +11,36 @@
 <button type="button">&#9658</button>
 
 
-    <section>
-        <h2>Upcoming Tours</h2>
+<section>
+    <h2>Upcoming Tours</h2>
 
 
-        <div class="tour-item">
-            @foreach($tours as $tour)
+    <div class="tour-item">
+        @foreach ($tours as $tour)
+            <span  class="tourspan">
+                <div class="tourdateinfoouter">
 
-            <span>
-                <strong>{{$tour->tour_date}}</strong>
-                &lt;&gt;
-                <span>{{$tour->location}}</span>
-                &lt;&gt;
-                <span>{{$tour->theatre}}</span>
-                &lt;&gt;
-                <button type="button">Buy Tickets</button>
+                        <strong>{{ $tour->tour_date }}</strong>
+                        &lt;&gt;
+                        <span>{{ $tour->location }}</span>
+                        &lt;&gt;
+                        <span>{{ $tour->theatre }}</span>
+                        &lt;&gt;
+
+                </div>
+
+                <div class="tourbtn">
+                    <button type="button">Buy Tickets</button>
                 <hr>
+                </div>
+
             </span>
-        
         @endforeach
-        </div>
-    </section>
-    
-    @include('partials.footer');
-    
+    </div>
+</section>
+
+@include('partials.footer');
+
 </body>
+
 </html>

@@ -12,7 +12,7 @@
                 <!-- Add icons to the links using the .nav-icon class
                     with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="dashboard.html" class="nav-link">
+                    <a href="/admin/dashboard#" class="nav-link">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>Dashboard</p>
                     </a>
@@ -24,9 +24,9 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="subcategory.html" class="nav-link">
-                        <i class="nav-icon fas fa-file-alt"></i>
-                        <p>Sub Category</p>
+                    <a href="/admin/tours" class="nav-link">
+                        <i class="fas fa-map-marker-alt" style="margin-right: 16px;"></i>
+                        <p>Tours</p>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -38,9 +38,10 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="products.html" class="nav-link">
+                    <a href="/admin/products" class="nav-link">
                         <i class="nav-icon fas fa-tag"></i>
                         <p>Products</p>
+
                     </a>
                 </li>
 

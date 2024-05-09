@@ -20,10 +20,7 @@ class MerchController extends Controller
         // return view('store', [['merches' => $merches], ['musics' => $musics]]);
         return view('store', compact('merches', 'musics'));
     }
-    // public function showalbum(Musicstore $musics) {
-    //     // $musics = Musicstore::find($album->id)->musics;
-    //     return view('showalbum', ['musics'=>$musics]);
-    // }
+    
 
     public function showalbum($id) {
         $musics = Musicstore::findOrFail($id);
@@ -31,5 +28,5 @@ class MerchController extends Controller
         // dd($musics);
         return view('showalbum', ['music' => $musics]);
     }
-    
+
 }

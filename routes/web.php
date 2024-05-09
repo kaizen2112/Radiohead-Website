@@ -6,20 +6,9 @@ use App\Http\Controllers\MerchController;
 use App\Http\Controllers\admin\HomeController;
 use App\Http\Controllers\MusicstoreController;
 use App\Http\Controllers\admin\AdminLoginController;
+use App\Http\Controllers\admin\AdminToursController;
+use App\Http\Controllers\admin\ProductsController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-// Route::get('/', function () {
-//     return view('home');
-// });
 
 Route::get('/', [TourController::class,  'index']);
 
@@ -50,7 +39,27 @@ Route::group(['prefix'=>'admin'], function() {
 
     Route::group(['middleware' => 'admin.auth'], function() {
 
+
         Route::get('/dashboard', [HomeController::class, 'index'])->name('admin.dashboard');
+
+        Route::get('/products', [ProductsController::class, 'productshow'])->name('admin.products');
+        Route::post('/products', [ProductsController::class, 'store']);
+
+
+        Route::get('/products/create', [ProductsController::class, 'create'])->name('admin.products.create');
+
+        Route::get('/products/{id}/edit', [ProductsController::class, 'edit'])->name('admin.products.edit');
+        Route::put('/products/{id}', [ProductsController::class, 'update'])->name('admin.products.update');
+
+        Route::delete('/products/{id}', [ProductsController::class, 'destroy'])->name('admin.products.destroy');
+
+
+
+
+
+        Route::get('/tours', [AdminToursController::class, 'tourshow'])->name('admin.tours');
+
+
         Route::get('/logout', [HomeController::class, 'logout'])->name('admin.logout');
 
 

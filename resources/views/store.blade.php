@@ -12,7 +12,7 @@
         @foreach ($musics as $music)
         <a href="/store/albums/{{$music->id}}">
     <div class="album-card">
-        
+
             <div>
                 <strong>{{$music->album_title}}</strong>
             </div>
@@ -22,16 +22,16 @@
                 <button role="button">Add to Cart</button>
             </div>
 
-        
-        
+
+
     </div></a>
-        
+
     @endforeach
-    
+
 
     </div>
-    
-    
+
+
 </section>
 
 <section class="merch-section">
@@ -50,15 +50,18 @@
         <!-- Your products go here, each with a class indicating its category -->
         {{-- T-Shirts --}}
     <h3>T-Shirts</h3>
-    <div class="merch-type"> 
-        
+    <div class="merch-type">
+
         @foreach ($merches as $merch)
         <div class="merch-item {{ strtolower($merch->type) }}"> <!-- Add dynamic class based on type -->
             <strong>{{$merch->name}}</strong>
             <span>{{$merch->size}}</span><br>
             <img src="{{ asset('Images/merchs/'.strtolower($merch->type).'.jpg') }}" height="300">
             <span>{{$merch->price}}</span>
+
             <button role="button">Add to Cart</button>
+
+
         </div>
         @endforeach
 
@@ -69,11 +72,11 @@
     {{-- <script src="/js/filter.js"></script> --}}
     <script>
         document.querySelectorAll('.filter-btn').forEach(button => {
-    button.addEventListener('click', function() {
+        button.addEventListener('click', function() {
         let current = document.getElementsByClassName('active');
         current[0].className = current[0].className.replace(" active", "");
         this.className += " active";
-        
+
         const filter = this.getAttribute('data-filter');
         let products = document.querySelectorAll('#products .product');
 
@@ -87,9 +90,9 @@
     });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.filter-btn').forEach(button => {
-        button.addEventListener('click', function() {
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', function() {
             // Remove active class from currently active button
             let current = document.querySelector('.filter-btn.active');
             if (current) {
@@ -117,8 +120,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     </script>
 
-    
-   
+
+
 
 </section>
 

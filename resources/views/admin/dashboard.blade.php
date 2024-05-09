@@ -17,8 +17,11 @@
     </div>
     <!-- /.container-fluid -->
 </section>
+
+
 <!-- Main content -->
 <section class="content">
+
     <!-- Default box -->
     <div class="container-fluid">
         <div class="row">

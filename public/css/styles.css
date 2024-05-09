@@ -4,7 +4,7 @@
 *{
     /* box-sizing: border-box;  */
     font-family: Raleway;
-    color: #0F0F0F; 
+    color: #0F0F0F;
     /* background-color: #0F0F0F; */
 }
 html, body{
@@ -53,7 +53,7 @@ button {
     transition: 0.3s ease all;
     z-index: 1;
   }
-  
+
   button:before {
     transition: 0.5s all ease;
     position: absolute;
@@ -66,24 +66,24 @@ button {
     background-color: #FF0072;
     z-index: -1;
   }
-  
+
   button:hover, button:focus {
     color: white;
   }
-  
+
   button:hover:before, button:focus:before {
     transition: 0.5s all ease;
     left: 0;
     right: 0;
     opacity: 1;
   }
-  
+
   button:active {
     transform: scale(0.9);
   }
 
-  
-  
+
+
 
 
 
@@ -93,7 +93,7 @@ button {
     }
 .nav li{
     display: inline;
-    
+
 }
 .nav a{
     display: inline-block;
@@ -111,7 +111,7 @@ button {
     border-bottom: 1px solid rgba(255, 255, 255, .3);
 }
 .main-nav li{
-    padding: 0 .01%; 
+    padding: 0 .01%;
 }
 
 
@@ -154,12 +154,12 @@ button {
     color: #333;
     text-align: center;
     font-size: 2.5em;
-   
+
 }
 .about-band-image{
     float: left;
     margin: 15px;
-    
+
 }
 .tour-container{
     display: flex;
@@ -171,20 +171,38 @@ button {
     align-items: center;
 }
 
-
+.tourspan{
+    display: flex;
+    flex-direction: row;
+    left: 0;
+    gap: 5rem;
+}
 
 .tour-item {
     border: 2px solid #ccc; /* Define the border style */
     padding: 10px; /* Add some padding for spacing */
     margin-bottom: 10px; /* Add margin to separate each item */
     border-radius: 5px; /* Optional: Add rounded corners */
-
-    
-    /* justify-content: space-between; */
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
 
+}
+
+.tourdateinfoouter{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: left;
     
+}
+.tourdateinfo{
+    display: flex;
+
+}
+
+.tourbtn{
+    display: flex;
 }
 
 /* Example styles for elements inside the looped content */
