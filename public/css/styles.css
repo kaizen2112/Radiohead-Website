@@ -20,7 +20,7 @@ a{
 #productButtons button {
     padding: 10px 20px;
     margin: 5px;
-    background-color: #f0f0f0;
+    /* background-color: #d10e0e; */
     border: none;
     cursor: pointer;
     outline: none;
@@ -34,27 +34,49 @@ a{
 #products .product {
     display: none; /* Initially hide all products */
 }
+.special-btn {
+    background-color: #000000; /* Initial background color to white */
+    margin-top: 30px;
+    color: #ffffff; /* Initial text color to black */
+    border: 3px solid #ffffff;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for background and color */
+}
+
+.special-btn:hover, .special-btn:focus {
+    background-color: #ffffff !important; /* Change background color to black on hover/focus */
+    color: #ffffff; /* Change text color to white on hover/focus */
+}
+
+.special-btn .arrow {
+    color: inherit; /* Ensures the arrow color matches the button text color */
+}
+
+.special-btn:hover .arrow, .special-btn:focus .arrow {
+    font-size: 24px; /* Keeps the larger size on hover */
+}
 
 
-button {
-    font-size: 18px;
+ button {
+    font-size: 16px;
     letter-spacing: 2px;
+    cursor: pointer;
+
     text-transform: uppercase;
     display: inline-block;
     text-align: center;
     font-weight: bold;
     padding: 0.7em 2em;
-    border: 3px solid #FF0072;
+    border: 3px solid #000000;
     border-radius: 2px;
     position: relative;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
-    color: #FF0072;
+    color: #000000;
     text-decoration: none;
     transition: 0.3s ease all;
     z-index: 1;
-  }
+}
 
-  button:before {
+button:before {
     transition: 0.5s all ease;
     position: absolute;
     top: 0;
@@ -63,24 +85,41 @@ button {
     bottom: 0;
     opacity: 0;
     content: '';
-    background-color: #FF0072;
-    z-index: -1;
-  }
+    background-color: #000000;
+    z-index: -2;
+}
 
   button:hover, button:focus {
     color: white;
+
   }
+  button .arrow {
+    font-size: 18px;
+    transition: font-size 0.3s ease;
+    color: #000000;
+}
+
+button:hover .arrow, button:focus .arrow {
+    font-size: 24px;
+    color: white;
+}
+
 
   button:hover:before, button:focus:before {
     transition: 0.5s all ease;
     left: 0;
     right: 0;
     opacity: 1;
+
   }
+
 
   button:active {
     transform: scale(0.9);
   }
+
+
+
 
 
 
@@ -98,7 +137,7 @@ button {
 .nav a{
     display: inline-block;
     padding: 1em 2em;
-    color: #0F0F0F;
+    color: #f8f5f5;
     text-decoration: none;
 }
 .nav a:hover{
@@ -106,118 +145,48 @@ button {
 }
 .main-nav{
     text-align: center;
+    background-color: #000000;
     font-size: 1.1em;
     font-weight: lighter;
     border-bottom: 1px solid rgba(255, 255, 255, .3);
 }
 .main-nav li{
     padding: 0 .01%;
+    /* color: white; */
 }
 
 
 
 .main-header{
     background-color: rgba(0, 0, 0, 0);
-    background-image: url("../Images/headercover.jpg");
+    background-image: url("../Images/radioheadbg.jpeg");
     background-blend-mode: multiply;
     background-size: cover;
     padding-bottom: 8%;
     padding-top: 10px;
     padding-left: 10px;
     padding-right: 10px;
+    height: 50vh;
 }
 .band-name{
     text-align: center;
-    margin: 0;
+    margin: 5px;
+    margin-top: 80px;
     font-size: 4em;
     font-weight: normal;
+    color: white;
 
 }
 .band-name-large{
 
-    font-size: 8em;
+    font-size: 7em;
 }
 
-.content-section{
-    margin: 1em;
-}
-
-.container{
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 1.5em;
-    margin-bottom: 75px;
-}
-
-.section-header{
-    font-weight: normal;
-    color: #333;
-    text-align: center;
-    font-size: 2.5em;
-
-}
-.about-band-image{
+/* .about-band-image{
     float: left;
     margin: 15px;
 
-}
-.tour-container{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0 auto;
-    padding: 0 1.5em;
-    align-items: center;
-}
-
-.tourspan{
-    display: flex;
-    flex-direction: row;
-    left: 0;
-    gap: 5rem;
-}
-
-.tour-item {
-    border: 2px solid #ccc; /* Define the border style */
-    padding: 10px; /* Add some padding for spacing */
-    margin-bottom: 10px; /* Add margin to separate each item */
-    border-radius: 5px; /* Optional: Add rounded corners */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.tourdateinfoouter{
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: left;
-    
-}
-.tourdateinfo{
-    display: flex;
-
-}
-
-.tourbtn{
-    display: flex;
-}
-
-/* Example styles for elements inside the looped content */
-.tour-item strong {
-    color: #333; /* Color for tour date */
-}
-
-.tour-item span {
-    /* display: block; Make spans block-level for better formatting */
-    /* displaye: block; */
-    color: #666; /* Color for location and theatre */
-}
-
-
-
+} */
 
 
 

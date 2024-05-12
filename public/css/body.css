@@ -1,0 +1,193 @@
+.content-section{
+    margin: 1em;
+}
+
+.container{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5em;
+    margin-bottom: 175px;
+}
+
+.section-header{
+    font-weight: 400;
+    color: #000000;
+    text-align: center;
+    font-size: 2.5em;
+    margin-top: 20px;
+
+
+}
+
+/* .section-header {
+    font-weight: normal;
+    color: #fc3f3f;
+    text-align: center;
+    font-size: 8.5em;
+    margin-top: 20px;
+} */
+
+
+
+
+.tour-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    /* flex-wrap: wrap; */
+    padding: 20px 1.5em;
+    max-width: 800px;
+}
+
+/* .tourspan{
+    display: flex;
+    flex-direction: row;
+    left: 0;
+    gap: 5rem;
+} */
+.tour-item {
+    border: 7px solid #ffffff;  /* Define the border style */
+    padding: 20px;  /* Add more padding for better spacing */
+    /* margin-bottom: 20px;  Increase margin to separate each item */
+    margin: 20px;
+    /* margin-right: 200px; */
+    border-radius: 8px;  /* Rounded corners */
+    background-color: #ffffff;  /* Light background for each item */
+    width: 93.5%;  /* Full width to stretch across the container */
+    /* box-shadow: 60px -16px teal; */
+
+    box-shadow:
+    inset 0 -3em 3em rgba(255, 255, 255, 0.3),
+    0 0 0 2px white,
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.6);
+}
+
+/* .tour-item {
+    border: 2px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
+.first-half{
+    margin-top: 10px;
+    /* marker-start: 10px; */
+    margin-left: 10px;
+    margin-right: 100px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    height: 85px;
+
+    display: flex;
+    flex-direction: row;  /* Aligns items in a row */
+    justify-content: space-between;  /* Space out content */
+    width: 98%;  /* Full width to utilize space */
+    align-items: center;  /* Center align items vertically */
+    /* gap: 15rem;  Gap between elements */
+    border: 1px solid #ffffff;
+
+
+
+}
+.second-half{
+    margin-top: 10px;
+    /* marker-start: 10px; */
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    height: 65px;
+
+    display: flex;
+    flex-direction: row;  /* Aligns items in a row */
+    justify-content: space-between;  /* Space out content */
+    width: 98%;  /* Full width to utilize space */
+    align-items: center;  /* Center align items vertically */
+    /* gap: 15rem;  Gap between elements */
+    border: 1px solid #ffffff;
+
+}
+.tourspan {
+    margin-top: 10px;
+    /* marker-start: 10px; */
+    margin-left: 10px;
+    margin-right: 100px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    height: 65px;
+    border: 1px solid #000000;  /* Border for the row */
+    cursor: pointer;
+    
+    transition: height 0.3s ease; /* Transition for smooth height change */
+    overflow: hidden; /* Hide overflow content */
+    height: 85px; /* Default height */
+    gap: 15rem;
+
+}
+
+.tourspan:hover {
+    height: 250px; /* Expand height on hover */
+}
+/* .tourdateinfoouter{
+    display: flex;
+    justify-content: left;
+
+} */
+.tourdateinfoouter {
+    margin-left: 100px;
+    display: flex;
+    justify-content: space-between;  /* Align items to the left */
+    align-items: center;  /* Center align items vertically */
+    width: 100%;  /* Full width */
+}
+
+.tourdateinfo{
+    display: flex;
+
+
+}
+
+/* .tourbtn{
+    display: flex;
+} */
+.tourbtn {
+    display: flex;
+    justify-content: center;  /* Button aligned to the right */
+    width: 100%;  /* Full width */
+
+}
+
+
+/* Example styles for elements inside the looped content */
+.tour-item strong {
+    color: #333; /* Color for tour date */
+    font-size: 1.5em; /* Larger font size for tour date */
+
+}
+
+.tour-item span {
+    /* display: block; Make spans block-level for better formatting */
+    /* displaye: block; */
+    color: #000000; /* Color for location and theatre */
+    font-size: 1.2em; /* Font size for location and theatre */
+    font-weight: bold;
+}
+.tourinfo{
+    /* display: flex; */
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #ffffff;
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+
