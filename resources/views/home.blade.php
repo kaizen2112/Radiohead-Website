@@ -11,7 +11,10 @@
     <br>
 
     <div style="text-align: center;">
+        <a href="/albums">
         <button class="special-btn"> Get Our Latest Albums <br><span class="arrow">&#9658;</span></button>
+
+        </a>
     </div>
 </div>
 

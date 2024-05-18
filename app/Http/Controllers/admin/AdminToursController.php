@@ -26,7 +26,7 @@ class AdminToursController extends Controller
     }
 
     public function tourstore(Request $request) {
-        $formFields = $request->validate([
+        $request->validate([
             'tour_title' => 'required|string|max:255',
             'tour_description' => 'required|string',
             'ticket_price' => 'required|numeric',
@@ -34,14 +34,27 @@ class AdminToursController extends Controller
             'tour_date' => 'required|date',
             'location' => 'required|string|max:255',
             'theatre' => 'required|string|max:255',
-            'tour_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048', // Adjust max size as needed
+            'tour_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:10000', // Adjust max size as needed
         ]);
 
         if($request->hasFile('tour_image')) {
-            $formFields['tour_image'] = $request->file('tour_image')->store('images', 'public');
+            // $formFields['tour_image'] = $request->file('tour_image')->store('images', 'public');
+            $imageName = time().'.'.$request->tour_image->extension();
+            $request->tour_image->move(public_path('tours'), $imageName);
         }
 
-        Tour::create($formFields);
+        // Tour::create($formFields);
+        $tour = new Tour;
+        $tour->tour_title = $request->tour_title;
+        $tour->tour_description = $request->tour_description;
+        $tour->ticket_price = $request->ticket_price;
+        $tour->ticket_stock = $request->ticket_stock;
+        $tour->tour_date = $request->tour_date;
+        $tour->location = $request->location;
+        $tour->theatre = $request->theatre;
+        $tour->tour_image = $imageName;
+        $tour->save();
+
 
         return redirect('/admin/tours')->with('message', 'Tour Enlisted Successfully');
     }
@@ -50,7 +63,7 @@ class AdminToursController extends Controller
         return view('admin.tours.edittour', compact('tour'));
     }
     public function tourupdate(Request $request, $id) {
-        $formFields = $request->validate([
+         $request->validate([
             'tour_title' => 'required|string|max:255',
             'tour_description' => 'required|string',
             'ticket_price' => 'required|numeric',
@@ -58,15 +71,28 @@ class AdminToursController extends Controller
             'tour_date' => 'required|date',
             'location' => 'required|string|max:255',
             'theatre' => 'required|string|max:255',
-            'tour_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048', // Adjust max size as needed
+            'tour_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:10000', // Adjust max size as needed
         ]);
 
         if($request->hasFile('tour_image')) {
-            $formFields['tour_image'] = $request->file('tour_image')->store('images', 'public');
+            // $formFields['tour_image'] = $request->file('tour_image')->store('images', 'public');
+            $imageName = time().'.'.$request->tour_image->extension();
+            $request->tour_image->move(public_path('tours'), $imageName);
         }
 
         $tour = Tour::findOrFail($id);
-        $tour->update($formFields);
+        // $tour->update($formFields);
+
+        $tour = new Tour;
+        $tour->tour_title = $request->tour_title;
+        $tour->tour_description = $request->tour_description;
+        $tour->ticket_price = $request->ticket_price;
+        $tour->ticket_stock = $request->ticket_stock;
+        $tour->tour_date = $request->tour_date;
+        $tour->location = $request->location;
+        $tour->theatre = $request->theatre;
+        $tour->tour_image = $imageName;
+        $tour->save();
 
         return redirect('/admin/tours')->with('message', 'Tour Updated Successfully');
     }
