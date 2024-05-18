@@ -1,0 +1,82 @@
+* {
+    background-color: black;
+}
+
+.album-container {
+    margin-top: 5%;
+    margin-left: 100px;
+    margin-right: 10px;
+    margin-bottom: 10%;
+    position: relative;
+    background: rgb(0, 0, 0);
+}
+
+.album-card {
+    display: inline-block;
+    height: 40%;
+
+    width: 25%;
+    margin: 40px;
+    perspective: 1000px; /* Add perspective */
+}
+
+.album-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.album-card:hover .album-inner {
+    transform: rotateY(180deg);
+}
+
+.album-front, .album-back {
+    position: absolute;
+    width: 100%;
+    backface-visibility: hidden;
+    height: 350px; /* Adjust height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.album-front {
+    background: black;
+}
+
+.album-back {
+    background: rgb(245, 13, 13);
+    transform: rotateY(180deg);
+}
+.album-back-content {
+    text-align: center;
+    padding: 18px;
+    background:rgb(245, 13, 13);
+    color: white; /* Change this to the desired text color */
+}
+
+.album-back-content h1 {
+    color: yellow; /* Change this to the desired heading color */
+    background: rgb(245, 13, 13);
+}
+
+.album-back-content p {
+    color: rgb(0, 0, 0); /* Change this to the desired paragraph color */
+    font-size: 0.8rem;
+    background: rgb(245, 13, 13)
+
+}
+ul {
+    list-style-type: none;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #785252;
+}
+li {
+    color: #ffffff;
+    float: left;
+}

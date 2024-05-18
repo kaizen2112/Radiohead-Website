@@ -26,25 +26,44 @@ class ProductsController extends Controller
         return view('admin.products.create');
     }
     public function store(Request $request) {
-        $formFields = $request->validate([
+        // dd($request->all());
+        // $imageName = time().'.'.$request->image->extension();
+        // $request->image->move(public_path('products'), $imageName);
+
+        // dd($imageName);
+
+        $request->validate([
             'type' => 'required',
             'name' => 'required',
             'price' => 'required|numeric',
             'stock' => 'required|integer',
             'availability' => 'boolean',
-            // 'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048', // Adjust max size as needed
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:10000', // Adjust max size as needed
             'description' => 'nullable',
             'size' => 'nullable',
             'release_date' => 'nullable|date',
         ]);
 
-        // if($request->hasFile('image')) {
-        //     $formFields['image'] = $request->file('image')->store('images', 'public');
-        // }
+        if($request->hasFile('image')) {
+            // $formFields['image'] = $request->file('image')->store('images', 'public');
+            $imageName = time().'.'.$request->image->extension();
+            $request->image->move(public_path('products'), $imageName);
+        }
+        $merchant = new Merch;
+        $merchant->type = $request->type;
+        $merchant->name = $request->name;
+        $merchant->price = $request->price;
+        $merchant->stock = $request->stock;
+        $merchant->availability = $request->availability;
+        $merchant->image = $imageName;
+        $merchant->description = $request->description;
+        $merchant->size = $request->size;
+        $merchant->release_date = $request->release_date;
+        $merchant->save();
 
-        Merch::create($formFields);
+        // Merch::create($formFields);
 
-        return redirect('/admin/products')->with('message', 'Product Enlisted Successfully');
+        return redirect('/admin/products')->withSuccess('Product Created Successfully');
     }
     public function edit($id) {
         $merch = Merch::findOrFail($id);

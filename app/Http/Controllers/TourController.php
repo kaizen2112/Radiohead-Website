@@ -10,7 +10,7 @@ class TourController extends Controller
     //
     // public function index() {
 
-    //     // dd(request('tag')); 
+    //     // dd(request('tag'));
     //     return view('home', [
     //         'tours' => tour::latest()
     //     ]);
@@ -19,5 +19,11 @@ class TourController extends Controller
     public function index() {
         $tours = tour::latest()->get(); // Call ->get() to execute the query
         return view('home', ['tours' => $tours]);
+    }
+    public function showtour($id) {
+        $tours = tour::findOrFail($id);
+
+        // dd($tours);
+        return view('showtours', ['tour' => $tours]);
     }
 }

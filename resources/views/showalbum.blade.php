@@ -2,13 +2,13 @@
 <link rel="stylesheet" href="{{ asset('css/cardview.css') }}" />
 <link rel="stylesheet" href="{{ asset('css/styles.css') }}" />
 <link rel="stylesheet" href="{{ asset('css/store.css') }}" />
-    
+
 @include('partials.hero')
 
-    
-    
+
+
     <a href="/store" class="back-btn">
-        <i class="back-icon"></i> Back 
+        <i class="back-icon"></i> Back
     </a>
     {{-- //title , date, image, price, genre, description --}}
 
@@ -21,7 +21,7 @@
             <p>Genre: {{ $music->album_genre }}</p>
             <p>Description: {{ $music->album_description }}</p>
         </div>
-        <button role="button">Add to Cart</button>
+        <a href="{{route('order.create')}}"><button role="button">Add to Cart</button></a>
 
     </section>
 
@@ -29,7 +29,7 @@
     {{-- <section class="a">
         <h2 class="music-header">Music</h2>
         <div class="al">
-            
+
                     <div class="alb">
                         <div>
                             <strong>{{$music->album_title}}</strong>
@@ -40,10 +40,9 @@
                             <button role="button">Add to Cart</button>
                         </div>
                     </div>
-                
+
                 <p>No music albums found.</p> --}}
-           
+
         </div>
     </section>
 
-                

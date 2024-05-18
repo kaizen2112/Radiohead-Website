@@ -129,7 +129,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Products List</h1>
+                <h1>Orders List</h1>
             </div>
         </div>
     </div>
@@ -143,20 +143,16 @@
             <div class="col-lg-4 col-6">
                 <div class="small-box card">
                     <div class="inner">
-                        <h3>{{ count($merches) }}</h3>
-                        <p>Total Products</p>
+                        <h3>{{ count($orders) }}</h3>
+                        <p>Total Orders</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-bag"></i>
                     </div>
-                    <a href="#" class="small-box-footer text-dark">More info <i class="fas fa-arrow-circle-right"></i></a>
+
                 </div>
             </div>
-            <div class="col-lg-4 col-6">
-                <div class="text-right">
-                    <a href="/admin/products/create" class="btn btn-success">Add New Product</a>
-                </div>
-            </div>
+
         </div>
     </div>
 
@@ -168,37 +164,33 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th>Type</th>
-                                    <th>Name</th>
-                                    <th>Size</th>
-                                    <th>Stock</th>
-                                    <th>Description</th>
-                                    <th>Availability</th>
-                                    <th>Release Date</th>
-                                    <th>Image</th>
-                                    <th>Price</th>
+                                    <th>User Name</th>
+                                    <th>Product Name</th>
+                                    <th>Product Quantity</th>
+                                    <th>User Email</th>
+                                    <th>User Phone Number</th>
+                                    <th>User Location</th>
+                                    <th>Time</th>
                                     <th>Action</th>
+
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($merches as $merch)
-                                <tr class="{{ strtolower($merch->type) }}">
-                                    <td>{{ $merch->type }}</td>
-                                    <td>{{ $merch->name }}</td>
-                                    <td>{{ $merch->size }}</td>
-                                    <td>{{ $merch->stock }}</td>
-                                    <td>{{ $merch->description }}</td>
-                                    <td>{{ $merch->availability == 1 ? 'In stock' : 'Out of stock' }}</td>
-                                    <td>{{ $merch->release_date }}</td>
-                                    <td>
-                                        {{-- <img src="{{ asset('Images/merchs/'.strtolower($merch->type).'.jpg') }}" class="product-image"> --}}
-                                        <img src="{{ asset('products/'.$merch->image) }}" class="product-image">
+                                @foreach ($orders as $order)
+                                <tr class="{{ strtolower($order->type) }}">
+                                    <td>{{ $order->name }}</td>
+                                    <td>{{ $order->product_name }}</td>
+                                    <td>{{ $order->product_quantity }}</td>
+                                    <td>{{ $order->email }}</td>
+                                    <td>{{ $order->phone_number }}</td>
 
-                                    </td>
-                                    <td>{{ $merch->price }}</td>
+                                    <td>{{ $order->location }}</td>
+                                    <td>{{ $order->created_at }}</td>
+
+
                                     <td class="button-cell">
-                                        <a href="/admin/products/{{ $merch->id }}/edit" class="btn btn-primary">Update</a>
-                                        <form action="/admin/products/{{ $merch->id }}" method="POST" style="display: inline;">
+                                        <a href="/admin/products/{{ $order->id }}/edit" class="btn btn-primary">Update</a>
+                                        <form action="/admin/products/{{ $order->id }}" method="POST" style="display: inline;">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this product?')">Delete</button>

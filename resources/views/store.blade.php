@@ -56,7 +56,8 @@
         <div class="merch-item {{ strtolower($merch->type) }}"> <!-- Add dynamic class based on type -->
             <strong>{{$merch->name}}</strong>
             <span>{{$merch->size}}</span><br>
-            <img src="{{ asset('Images/merchs/'.strtolower($merch->type).'.jpg') }}" height="300">
+            {{-- <img src="{{ asset('Images/merchs/'.strtolower($merch->type).'.jpg') }}" height="300"> --}}
+            <img src="{{ asset('products/'.$merch->image) }}" class="product-image" height="300">
             <span>{{$merch->price}}</span>
 
             <button role="button">Add to Cart</button>

@@ -16,6 +16,8 @@ return new class extends Migration
             $table->timestamps();
 
             $table->string('album_title');
+            $table->string('album_artist');
+            $table->string('song_name');
             $table->date('album_date');
             $table->string('album_image')->nullable();
             $table->string('album_price');

@@ -17,7 +17,7 @@ return new class extends Migration
 
             $table->string('tour_title');
             $table->text('tour_description');
-            $table->string('tour_image');
+            $table->string('tour_image')->nullable();
             $table->string('ticket_price');
             $table->string('ticket_stock');
 

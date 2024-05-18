@@ -40,6 +40,7 @@ a{
     color: #ffffff; /* Initial text color to black */
     border: 3px solid #ffffff;
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for background and color */
+    margin-bottom: 3rem;
 }
 
 .special-btn:hover, .special-btn:focus {
@@ -144,6 +145,7 @@ button:hover .arrow, button:focus .arrow {
     background-color: rgba(255, 255, 255, .3);
 }
 .main-nav{
+    display: flex;
     text-align: center;
     background-color: #000000;
     font-size: 1.1em;
@@ -155,23 +157,56 @@ button:hover .arrow, button:focus .arrow {
     /* color: white; */
 }
 
-
-
 .main-header{
+    position: fixed;
+    display: flex;
     background-color: rgba(0, 0, 0, 0);
-    background-image: url("../Images/radioheadbg.jpeg");
+    /* background-image: url("../Images/radioheadbg.jpeg"); */
     background-blend-mode: multiply;
     background-size: cover;
-    padding-bottom: 8%;
-    padding-top: 10px;
+    /* padding-bottom: 8%; */
+    /* padding-top: 10px;
     padding-left: 10px;
-    padding-right: 10px;
-    height: 50vh;
+    padding-right: 10px; */
+    height: 3rem;
+    width: 100%;
+    text-align: center;
+}
+
+.header-conainer{
+    background-color: rgba(0, 0, 0, 0);
+    width: 100%;
+    height: 3.4rem;
+}
+
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Center the navigation */
+    background-color: rgba(0, 0, 0, 0);
+    background-blend-mode: multiply;
+    background-size: cover;
+    height: 3rem;
+    z-index: 1000; /* Ensure header is above other content */
+    text-align: center;
+}
+
+.head{
+    background-image: url("../Images/radioheadbg.jpeg");
+    height: 600px;
 }
 .band-name{
+
+    /* background-color: rgba(0, 0, 0, 0.5); */
+
     text-align: center;
-    margin: 5px;
-    margin-top: 80px;
+    /* margin: 5px; */
+    /* margin-top: 2rem; */
+
+
     font-size: 4em;
     font-weight: normal;
     color: white;
@@ -182,12 +217,104 @@ button:hover .arrow, button:focus .arrow {
     font-size: 7em;
 }
 
+
 /* .about-band-image{
     float: left;
     margin: 15px;
 
 } */
+/* new css added for nav bar */
+/* Reset default margins and paddings */
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    padding-top: 3rem;
+}
+
+
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav li {
+    display: inline;
+}
+
+.nav a {
+    display: inline-block;
+    padding: 1em 2em;
+    color: #f8f5f5;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    background-color: rgba(255, 255, 255, .3);
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    background-color: #000000;
+    font-size: 1.1em;
+    font-weight: lighter;
+    border-bottom: 1px solid rgba(255, 255, 255, .3);
+}
+
+.main-nav li {
+    padding: 0 .01%;
+} */
+.header-container {
+    width: 100%;
+    height: 3.4rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure header is above other content */
+    background-color: black; /* Background color */
+}
+
+.main-header {
+    width: 100%;
+    height: 3.2rem; /* Fixed height */
+    display: flex;
+    justify-content: center; /* Center the navigation list */
+    align-items: center; /* Vertically center the content */
+}
+
+.nav ul {
+    display: flex;
+    list-style: none; /* Remove default list styling */
+    margin: 0;
+    padding: 0;
+}
+
+.nav li {
+    display: inline; /* Inline for list items */
+}
+
+.nav a {
+    display: inline-block;
+    padding: 1em 2em;
+    color: #f8f5f5;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    background-color: rgba(255, 255, 255, .3);
+}
+
+.main-nav {
+    display: flex;
+    align-items: center; /* Center items vertically */
+}
 
 
 

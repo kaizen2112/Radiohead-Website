@@ -2,9 +2,8 @@
 
 @section('content')
 <style>
-    /* CSS to make buttons appear horizontally */
 
-    .button-cell {
+.button-cell {
         display: flex; /* Use flexbox layout */
         align-items: center; /* Center the buttons vertically */
         justify-content: flex-start;
@@ -122,6 +121,7 @@
         max-height: 100px;
         border-radius: 4px;
     }
+
 </style>
 
 <!-- Content Header (Page header) -->
@@ -129,22 +129,29 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Products List</h1>
+                <h1>Tours</h1>
+            </div>
+            <div class="col-sm-6">
+
             </div>
         </div>
     </div>
     <!-- /.container-fluid -->
 </section>
 
+
 <!-- Main content -->
 <section class="content">
+
+    <!-- Default box -->
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-4 col-6">
                 <div class="small-box card">
                     <div class="inner">
-                        <h3>{{ count($merches) }}</h3>
-                        <p>Total Products</p>
+                        {{-- <h3>15</h3> --}}
+                        <h3>{{ count($tours) }}</h3>
+                        <p>Upcoming tours</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-bag"></i>
@@ -152,9 +159,10 @@
                     <a href="#" class="small-box-footer text-dark">More info <i class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
+
             <div class="col-lg-4 col-6">
                 <div class="text-right">
-                    <a href="/admin/products/create" class="btn btn-success">Add New Product</a>
+                    <a href="/admin/tours/create" class="btn btn-success">Add New Tour</a>
                 </div>
             </div>
         </div>
@@ -168,40 +176,39 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th>Type</th>
-                                    <th>Name</th>
-                                    <th>Size</th>
-                                    <th>Stock</th>
-                                    <th>Description</th>
-                                    <th>Availability</th>
-                                    <th>Release Date</th>
-                                    <th>Image</th>
-                                    <th>Price</th>
+                                    <th>Tour title</th>
+                                    <th>Tour date</th>
+                                    <th>Tour description</th>
+                                    <th>Ticket price</th>
+                                    <th>Ticket stock</th>
+                                    <th>Location</th>
+                                    <th>Venue</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($merches as $merch)
-                                <tr class="{{ strtolower($merch->type) }}">
-                                    <td>{{ $merch->type }}</td>
-                                    <td>{{ $merch->name }}</td>
-                                    <td>{{ $merch->size }}</td>
-                                    <td>{{ $merch->stock }}</td>
-                                    <td>{{ $merch->description }}</td>
-                                    <td>{{ $merch->availability == 1 ? 'In stock' : 'Out of stock' }}</td>
-                                    <td>{{ $merch->release_date }}</td>
-                                    <td>
-                                        {{-- <img src="{{ asset('Images/merchs/'.strtolower($merch->type).'.jpg') }}" class="product-image"> --}}
-                                        <img src="{{ asset('products/'.$merch->image) }}" class="product-image">
+                                @foreach ($tours as $tour)
+                                <tr>
 
+
+                                    <td>{{ $tour->tour_title }}</td>
+                                    <td>{{ $tour->tour_date }}</td>
+                                    <td>{{ $tour->tour_description }}</td>
+                                    <td>{{ $tour->ticket_price }}</td>
+                                    <td>{{ $tour->ticket_stock }}</td>
+
+                                    <td>
+                                        {{-- {{ $merch->availability == 1 ? 'In stock' : 'Out of stock' }} --}}
+                                        {{ $tour->location}}
                                     </td>
-                                    <td>{{ $merch->price }}</td>
+                                    <td>{{ $tour->theatre }}</td>
+                                    {{-- <td><img src="{{ asset('Images/merchs/'.strtolower($merch->type).'.jpg') }}" height="100"></td> --}}
                                     <td class="button-cell">
-                                        <a href="/admin/products/{{ $merch->id }}/edit" class="btn btn-primary">Update</a>
-                                        <form action="/admin/products/{{ $merch->id }}" method="POST" style="display: inline;">
+                                        <a href="/admin/tours/{{ $tour->id }}/edit" class="btn btn-primary">Update</a>
+                                        <form action="/admin/tours/{{ $tour->id }}" method="POST" style="display: inline;">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this product?')">Delete</button>
+                                            <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this tour?')">Delete</button>
                                         </form>
                                     </td>
                                 </tr>
@@ -213,6 +220,7 @@
             </div>
         </div>
     {{-- </div> --}}
+
 </section>
 <!-- /.content -->
 

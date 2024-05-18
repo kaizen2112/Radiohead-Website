@@ -3,6 +3,19 @@
 
 
 @include('partials.hero')
+<div class="head">
+    <br>
+    <br>
+    <h1 class="band-name band-name-large">Radiohead</h1>
+    <br>
+    <br>
+
+    <div style="text-align: center;">
+        <button class="special-btn"> Get Our Latest Albums <br><span class="arrow">&#9658;</span></button>
+    </div>
+</div>
+
+
 <br>
 
 
@@ -17,6 +30,8 @@
 
     <div class="tour-item">
         @foreach ($tours as $tour)
+        <a href="/tours/{{$tour->id}}">
+
         <div  class="tourspan">
             <div class="first-half">
                 <div class="tourdateinfoouter">
@@ -45,6 +60,7 @@
             </div>
 
         </div>
+        </a>
         @endforeach
     </div>
 </section>

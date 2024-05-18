@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call(TourSeeder::class);
         $this->call(MusicstoreSeeder::class);
+        $this->call(SongSeeder::class);
         $this->call(MerchSeeder::class);
     }
 }
