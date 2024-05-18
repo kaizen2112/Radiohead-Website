@@ -19,7 +19,7 @@
             <img src="{{ asset($music->album_image) }}" height="300">
             <div>
                 <span>{{$music->album_price}}</span>
-                <button role="button">Add to Cart</button>
+                <button role="button">View Details</button>
             </div>
 
 
@@ -53,17 +53,19 @@
     <div class="merch-type">
 
         @foreach ($merches as $merch)
+        <a href="/store/merch/{{$merch->id}}">
         <div class="merch-item {{ strtolower($merch->type) }}"> <!-- Add dynamic class based on type -->
             <strong>{{$merch->name}}</strong>
             <span>{{$merch->size}}</span><br>
             {{-- <img src="{{ asset('Images/merchs/'.strtolower($merch->type).'.jpg') }}" height="300"> --}}
-            <img src="{{ asset('products/'.$merch->image) }}" class="product-image" height="300">
+            <img src="{{ asset('products/'.$merch->image) }}" class="product-image" height="300" width="300">
             <span>{{$merch->price}}</span>
 
-            <button role="button">Add to Cart</button>
+            <button role="button">View Details</button>
 
 
         </div>
+        </a>
         @endforeach
 
     </div>
@@ -127,41 +129,6 @@
 </section>
 
 
-<section>
-    <h2>Cart</h2>
-    <div>
-        <strong>ITEM</strong>
-        &lt;&gt;
-        <strong>PRICE</strong>
-        &lt;&gt;
-        <strong>QUANTITY</strong>
-    </div>
-    <div>
-        <img src="{{ asset('Images/629569.jpg')}}" width="100">
-        <span>T-Shirt</span>
-        &lt;&gt;
-        <strong>PRICE</strong>
-        &lt;&gt;
-        <input type="number" value="1">
-        <button role="button">REMOVE</button>
-    </div>
-    <div>
-        <img src="{{ asset('Images/636501.jpg')}}" width="100">
-        <span>Album</span>
-        &lt;&gt;
-        <strong>PRICE</strong>
-        &lt;&gt;
-        <input type="number" value="1">
-        <button role="button">REMOVE</button>
-    </div>
-    <hr>
-    <div>
-        <strong>Total</strong>
-        <span>$18</span>
-    </div>
-    <div>
-        <button role="button">PURCHASE</button>
-    </div>
-</section>
+
 
 @include('partials.footer')

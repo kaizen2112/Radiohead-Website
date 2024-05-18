@@ -32,6 +32,8 @@ Route::get('/store', [MerchController::class, 'index']);
 
 Route::get('/store/albums/{id}', [MerchController::class, 'showalbum']);
 
+Route::get('/store/merch/{id}', [MerchController::class, 'showmerch']);
+
 Route::get('/tours/{id}', [TourController::class, 'showtour']);
 
 Route::controller(OrderController::class)->group(function() {
