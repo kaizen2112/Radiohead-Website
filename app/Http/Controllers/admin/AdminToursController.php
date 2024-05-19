@@ -71,7 +71,7 @@ class AdminToursController extends Controller
             'tour_date' => 'required|date',
             'location' => 'required|string|max:255',
             'theatre' => 'required|string|max:255',
-            'tour_image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:10000', // Adjust max size as needed
+            'tour_image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:10000', // Adjust max size as needed
         ]);
 
         if($request->hasFile('tour_image')) {
@@ -83,7 +83,7 @@ class AdminToursController extends Controller
         $tour = Tour::findOrFail($id);
         // $tour->update($formFields);
 
-        $tour = new Tour;
+        // $tour = new Tour;
         $tour->tour_title = $request->tour_title;
         $tour->tour_description = $request->tour_description;
         $tour->ticket_price = $request->ticket_price;

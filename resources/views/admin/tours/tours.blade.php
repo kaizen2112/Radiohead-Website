@@ -197,7 +197,12 @@
                                     <td>{{ $tour->tour_description }}</td>
                                     <td>{{ $tour->ticket_price }}</td>
                                     <td>{{ $tour->ticket_stock }}</td>
-                                    <td><img src="{{ asset('products/'.$tour->tour_image) }}" class="product-image"></td>
+                                    {{-- <td><img src="{{ asset('products/'.$tour->tour_image) }}" class="product-image"></td> --}}
+                                    <td>
+                                        {{-- <img src="tours/{{$tour->tour_image}}" class="tour-image"> --}}
+                                        <img src="{{ asset('tours/'.$tour->tour_image) }}" class="product-image">
+
+                                    </td>
 
                                     <td>
                                         {{-- {{ $merch->availability == 1 ? 'In stock' : 'Out of stock' }} --}}

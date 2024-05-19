@@ -33,23 +33,116 @@
     </section>
 
 
-    {{-- <section class="a">
-        <h2 class="music-header">Music</h2>
-        <div class="al">
 
-                    <div class="alb">
-                        <div>
-                            <strong>{{$music->album_title}}</strong>
-                        </div>
-                        <img src="{{ asset($music->album_image) }}" height="300">
-                        <div>
-                            <span>{{$music->album_price}}</span>
-                            <button role="button">Add to Cart</button>
-                        </div>
-                    </div>
-
-                <p>No music albums found.</p> --}}
 
         </div>
     </section>
 
+<style>
+    body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header, .footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.back-btn {
+    display: inline-block;
+    margin: 20px 0;
+    color: #333;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+.back-btn:hover {
+    text-decoration: underline;
+}
+
+.back-icon {
+    margin-right: 5px;
+}
+
+.merch-details {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.merch-info {
+    margin: 20px 0;
+}
+
+.merch-info h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.merch-info p {
+    margin: 10px 0;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.product-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+button[role="button"] {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
+button[role="button"]:hover {
+    background-color: #555;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    .merch-info h2 {
+        font-size: 1.5em;
+    }
+
+    .merch-info p {
+        font-size: 1em;
+    }
+
+    button[role="button"] {
+        width: 100%;
+        padding: 15px;
+    }
+}
+
+</style>

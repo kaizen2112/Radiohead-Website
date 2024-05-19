@@ -122,7 +122,7 @@
     height: 65px;
     border: 1px solid #000000;  /* Border for the row */
     cursor: pointer;
-    
+
     transition: height 0.3s ease; /* Transition for smooth height change */
     overflow: hidden; /* Hide overflow content */
     height: 85px; /* Default height */
@@ -132,6 +132,9 @@
 
 .tourspan:hover {
     height: 250px; /* Expand height on hover */
+    background-image: url('https://images.unsplash.com/photo-1621844810408-86f59ae57c68?q=80&w=2531&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
 }
 /* .tourdateinfoouter{
     display: flex;

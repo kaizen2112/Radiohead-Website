@@ -189,11 +189,11 @@
 
 
                                     <td class="button-cell">
-                                        <a href="/admin/products/{{ $order->id }}/edit" class="btn btn-primary">Update</a>
+                                        <a href="/admin/products/{{ $order->id }}/edit" class="btn btn-primary">Ship</a>
                                         <form action="/admin/products/{{ $order->id }}" method="POST" style="display: inline;">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this product?')">Delete</button>
+                                            <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this product?')">Cancel</button>
                                         </form>
                                     </td>
                                 </tr>

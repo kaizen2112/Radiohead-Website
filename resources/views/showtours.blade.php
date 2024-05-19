@@ -12,7 +12,9 @@
                 <div class="card">
                     <div class="card-header">{{ $tour->tour_title }}</div>
                     <div class="card-body">
-                        <img src="{{ asset($tour->tour_image) }}" alt="{{ $tour->tour_title }}" class="img-fluid mb-3">
+                        {{-- <img src="{{ asset($tour->tour_image) }}" alt="{{ $tour->tour_title }}" class="img-fluid mb-3"> --}}
+                        {{-- <img src="tours/{{$tour->tour_image}}" class="tour-image"> --}}
+                        <img src="{{ asset('tours/'.$tour->tour_image) }}" class="product-image" width="1000">
                         <div class="info">
                             <p class="des">{{ $tour->tour_description }}</p>
                         <p class="loc"><strong>Location:</strong> {{ $tour->location }}</p>
